@@ -2,7 +2,7 @@
 """
 Generate the personalised key-controlled rectangle Hack assembly program.
 
-Author: Anubhav (Roll No. 2501730406, K = 06)
+Author: Kuber Sharma (Roll No. 2501730446, K = 06)
 For K = 6: top row = 6, height = 20 rows, words/row = (6 mod 4) + 1 = 3 (48 pixels),
 first screen word = 16384 + 32 * 6 = 16576.
 """
