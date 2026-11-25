@@ -1,5 +1,5 @@
 // Hack Memory — maps RAM16K (0..16383), Screen (16384..24575), and Keyboard (24576).
-// Author: Anubhav (Roll No. 2501730406)
+// Author: Kuber Sharma (Roll No. 2501730446)
 CHIP Memory {
     IN  in[16], load, address[15];
     OUT out[16];
