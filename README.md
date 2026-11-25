@@ -2,14 +2,14 @@
 
 An individual capstone implementation organised into the three required parts:
 
-- **Student:** Anubhav (Roll No. 2501730406; K = 06).
+- **Student:** Kuber Sharma (Roll No. 2501730446; K = 06).
 - **Part A:** Hack CPU, Memory and Computer HDL.
 - **Part B:** two-pass Python assembler with the K-dependent symbol-table export feature (`symbols.txt`).
 - **Part C:** generated keyboard-controlled rectangle program and an optional Python teaching emulator.
 
 ## Personal configuration
 
-`Part-B-Assembler/config.json` is configured with `K = 6`, which is the last two digits of Anubhav's university roll number (`2501730406`).
+`Part-B-Assembler/config.json` is configured with `K = 6`, which is the last two digits of Kuber Sharma's university roll number (`2501730446`).
 
 For this configuration:
 
@@ -71,7 +71,7 @@ Hold a key while the emulator window is focused to draw the box; release it to e
 
 ## Submission checklist
 
-- [x] Confirm the student's name (`Anubhav`), roll number (`2501730406`), and `K = 06` in the report and configuration.
+- [x] Confirm the student's name (`Kuber Sharma`), roll number (`2501730446`), and `K = 06` in the report and configuration.
 - [ ] Run and capture official CPU, Memory and Computer HDL tests.
 - [ ] Compare Add, Max, Rect and the official Pong program against official assembler output.
 - [ ] Demonstrate `Box.hack` in the official CPU Emulator with key press and release.
