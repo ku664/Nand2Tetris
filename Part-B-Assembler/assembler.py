@@ -2,7 +2,7 @@
 """
 Two-pass assembler for the 16-bit Nand2Tetris Hack computer.
 
-Author: Anubhav (Roll No. 2501730406, K = 06)
+Author: Kuber Sharma (Roll No. 2501730446, K = 06)
 Required K-dependent feature (K mod 3 = 0): export resolved symbol table to symbols.txt.
 """
 from pathlib import Path
