@@ -1,0 +1,62 @@
+// Hack CPU — executes 16-bit Hack A-instructions and C-instructions.
+// Author: Anubhav (Roll No. 2501730406)
+CHIP CPU {
+    IN  inM[16],         // M value input (contents of RAM[A])
+        instruction[16], // Instruction for execution
+        reset;           // Signals whether to restart (reset==1) or continue (reset==0)
+
+    OUT outM[16],        // M value output
+        writeM,          // Write to M?
+        addressM[15],    // Address in data memory (of M)
+        pc[15];          // Address of next instruction
+
+    PARTS:
+    // Decode instruction type (bit 15: 0 = A-instruction, 1 = C-instruction).
+    Not(in=instruction[15], out=isAInst);
+    And(a=instruction[15], b=instruction[5], out=destA);
+    Or(a=isAInst, b=destA, out=loadA);
+
+    // Select A-register input: raw instruction for A-inst, ALU result for C-inst.
+    Mux16(a=instruction, b=aluResult, sel=instruction[15], out=aRegIn);
+    ARegister(in=aRegIn, load=loadA, out=aRegOut, out[0..14]=addressM);
+
+    // Load D-register only on C-instructions with dest bit d2 (bit 4) set.
+    And(a=instruction[15], b=instruction[4], out=loadD);
+    DRegister(in=aluResult, load=loadD, out=dRegOut);
+
+    // Select ALU y-operand: A-register when a-bit (bit 12) is 0, else inM.
+    Mux16(a=aRegOut, b=inM, sel=instruction[12], out=aluY);
+    ALU(
+        x=dRegOut,
+        y=aluY,
+        zx=instruction[11],
+        nx=instruction[10],
+        zy=instruction[9],
+        ny=instruction[8],
+        f=instruction[7],
+        no=instruction[6],
+        out=aluResult,
+        zr=isZero,
+        ng=isNeg
+    );
+
+    // Drive memory write enable and outM bus.
+    And(a=instruction[15], b=instruction[3], out=writeM);
+    Or16(a=aluResult, b=false, out=outM);
+
+    // Evaluate jump condition bits (j1=bit 2: <0, j2=bit 1: ==0, j3=bit 0: >0).
+    Not(in=isZero, out=notZero);
+    Not(in=isNeg, out=notNeg);
+    And(a=notNeg, b=notZero, out=isPos);
+
+    And(a=instruction[0], b=isPos, out=jgtMatch);
+    And(a=instruction[1], b=isZero, out=jeqMatch);
+    And(a=instruction[2], b=isNeg, out=jltMatch);
+
+    Or(a=jgtMatch, b=jeqMatch, out=jgeOrMatch);
+    Or(a=jgeOrMatch, b=jltMatch, out=anyJump);
+    And(a=instruction[15], b=anyJump, out=shouldJump);
+
+    // Update program counter: jump to A if condition holds, otherwise increment.
+    PC(in=aRegOut, load=shouldJump, inc=true, reset=reset, out[0..14]=pc);
+}

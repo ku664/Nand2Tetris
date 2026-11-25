@@ -1,0 +1,18 @@
+// Complete Hack Computer — integrates ROM32K, CPU, and Memory.
+// Author: Anubhav (Roll No. 2501730406)
+CHIP Computer {
+    IN reset;
+
+    PARTS:
+    ROM32K(address=pc, out=instruction);
+    CPU(
+        inM=memOut,
+        instruction=instruction,
+        reset=reset,
+        outM=cpuOutM,
+        writeM=cpuWriteM,
+        addressM=cpuAddrM,
+        pc=pc
+    );
+    Memory(in=cpuOutM, load=cpuWriteM, address=cpuAddrM, out=memOut);
+}
