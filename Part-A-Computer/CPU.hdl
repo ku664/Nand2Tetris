@@ -1,5 +1,5 @@
 // Hack CPU — executes 16-bit Hack A-instructions and C-instructions.
-// Author: Anubhav (Roll No. 2501730406)
+// Author: Kuber Sharma (Roll No. 2501730446)
 CHIP CPU {
     IN  inM[16],         // M value input (contents of RAM[A])
         instruction[16], // Instruction for execution
