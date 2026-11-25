@@ -2,7 +2,7 @@
 """
 Lightweight Hack CPU emulator with a 512x256 tkinter display.
 
-Author: Anubhav (Roll No. 2501730406, K = 06)
+Author: Kuber Sharma (Roll No. 2501730446, K = 06)
 """
 from pathlib import Path
 import argparse
@@ -110,7 +110,7 @@ def main():
     machine = HackMachine(words)
 
     root = tk.Tk()
-    root.title("Hack Computer — Box Program (Anubhav | Roll No. 2501730406)")
+    root.title("Hack Computer — Box Program (Kuber Sharma | Roll No. 2501730446)")
     root.geometry("720x560")
 
     info = tk.Label(
