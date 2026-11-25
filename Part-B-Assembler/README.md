@@ -19,7 +19,7 @@ Each command creates a matching `.hack` file. `symbols.txt` records predefined s
 
 ## Personal K and required extra feature
 
-`K` in `config.json` is set to `6` (the last two digits of Anubhav's university roll number, `2501730406`). You can override it for a single run with `--k 6`.
+`K` in `config.json` is set to `6` (the last two digits of Kuber's university roll number, `2501730446`). You can override it for a single run with `--k 6`.
 
 - `K mod 3 = 0`: save labels and variables with their addresses in `symbols.txt`.
 - `K mod 3 = 1`: report invalid instructions with their original source line numbers.
