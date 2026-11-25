@@ -64,7 +64,7 @@ def main():
         assert all(value == 0 for value in erased), "Box did not erase correctly"
 
     print("\nLOCAL VERIFICATION PASSED")
-    print(f"Student: Anubhav | Roll No: 2501730406 | K={k:02d}")
+    print(f"Student: Kuber Sharma | Roll No: 2501730446 | K={k:02d}")
     print(f"Top row={k}; height=20; width={(k % 4 + 1) * 16}px ({(k % 4) + 1} words/row); first addr={16384 + 32 * k}")
     print("Assembler tests, generator tests, sample assembly, box draw and box erase passed.")
     print("Official HDL tests, official Pong comparison, CPU Emulator screenshots and final report evidence remain separate submission tasks.")
