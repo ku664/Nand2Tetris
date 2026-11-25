@@ -1,7 +1,7 @@
 # Hack Computer Capstone Report
 
-**Name:** Anubhav  
-**Roll number:** 2501730406  
+**Name:** Kuber Sharma  
+**Roll number:** 2501730446  
 **Personal K (last two digits):** 06  
 **K mod 3:** 0 (Save symbol table to `symbols.txt`)  
 **Box dimensions:** 48 pixels wide (3 words/row) × 20 rows high (`16 × ((6 mod 4) + 1) = 48`)  
@@ -39,7 +39,7 @@ Describe one real mistake you encountered, its cause, how you corrected it, and 
 Summarise what you learned about hardware integration, binary instructions, symbol resolution, memory-mapped I/O and screen drawing.
 
 ## 7. Final evidence audit (complete before submission)
-- Confirm that the name (`Anubhav`) and roll number (`2501730406`) on this report belong to the submitting student.
+- Confirm that the name (`Kuber Sharma`) and roll number (`2501730446`) on this report belong to the submitting student.
 - Confirm that `K = 06` equals the last two digits of that student's roll number.
 - List the exact official test filenames and their actual outcomes.
 - Attach original screenshots; do not use emulator mock-ups as Hardware Simulator evidence.
