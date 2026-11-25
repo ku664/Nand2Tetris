@@ -1,8 +1,8 @@
 # Verification status
 
 ## Personalisation
-- Student: Anubhav
-- University roll number: 2501730406
+- Student: Kuber Sharma
+- University roll number: 2501730446
 - Personal number: K = 06 (numeric value 6)
 - K mod 3 = 0: save labels and variables with their addresses in `symbols.txt`
 - K mod 4 = 2: 48-pixel width, three 16-bit screen words per row
